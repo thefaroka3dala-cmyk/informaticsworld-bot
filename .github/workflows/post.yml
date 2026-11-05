@@ -10,7 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 post.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libfribidi0 fonts-dejavu-core
+          pip install pillow
+      - run: python post.py
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
       - run: |
@@ -19,3 +26,4 @@ jobs:
           git add state.txt
           git commit -m "update state" || exit 0
           git push
+        
