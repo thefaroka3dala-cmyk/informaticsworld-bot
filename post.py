@@ -1,4 +1,7 @@
 import os, uuid, urllib.request, urllib.parse
+import gate
+
+gate.check("last_post.txt", 3, 8, 22)
 
 token = os.environ["BOT_TOKEN"]
 chat = "@informaticsworldar"
@@ -47,3 +50,4 @@ except Exception as e:
 
 print("ok" if '"ok":true' in res else res)
 open("state.txt", "w").write(str(i + 1))
+gate.mark("last_post.txt")
