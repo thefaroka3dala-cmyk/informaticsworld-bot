@@ -1,5 +1,8 @@
-import os, urllib.request, urllib.parse
+import html, os, urllib.request, urllib.parse
 import xml.etree.ElementTree as ET
+import gate
+
+gate.check("last_news.txt", 4, 9, 21)
 
 token = os.environ["BOT_TOKEN"]
 chat = "@informaticsworldar"
@@ -40,11 +43,14 @@ except Exception:
 fresh = [i for i in items if i[1] not in seen]
 if fresh:
     title, link, src = fresh[0]
-    text = f"📰 {title}\n\nالمصدر: {src}\n{link}\n\n#أخبار_تقنية"
-    data = urllib.parse.urlencode({"chat_id": chat, "text": text}).encode()
+    text = (f"📰 {html.escape(title)}\n\nالمصدر: {html.escape(src)}\n"
+            f'🔗 <a href="{html.escape(link)}">اقرأ الخبر كاملاً</a>\n\n#أخبار_تقنية')
+    data = urllib.parse.urlencode(
+        {"chat_id": chat, "text": text, "parse_mode": "HTML"}).encode()
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     print(urllib.request.urlopen(url, data, timeout=30).read().decode())
     seen += [l for _, l, _ in fresh]
+    gate.mark("last_news.txt")
 else:
     print("no new items")
 
