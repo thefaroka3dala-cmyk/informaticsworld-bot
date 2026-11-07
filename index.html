@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>عالم المعلوماتية | عالم من الحروف والأكواد</title>
+<meta name="description" content="أبني قنوات وصفحات عربية تنشر محتواها بنفسها: بطاقات مصممة، أخبار تقنية، وبوتات تيليغرام. ومصادر مجانية لتعلّم البرمجة.">
+<meta property="og:title" content="عالم المعلوماتية">
+<meta property="og:description" content="قنوات وصفحات عربية تنشر وحدها، ومصادر مجانية لتعلّم البرمجة.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0c1030">
+<style>
+:root{--bg:#0c1030;--bg2:#141a4a;--ink:#eef0ff;--mute:#a4abd6;--cyan:#35d0ff;--lilac:#b8a6ff;--line:rgba(180,190,255,.16);color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI","Noto Sans Arabic",Tahoma,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.95}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,canvas:focus-visible{outline:3px solid var(--cyan);outline-offset:4px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.brand{font-weight:800;font-size:1.2rem}
+nav{display:flex;gap:26px;color:var(--mute);font-size:.95rem}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;min-height:78vh;padding-bottom:40px}
+h1{font-size:clamp(2.3rem,5.6vw,4rem);line-height:1.3;font-weight:800;margin-bottom:20px}
+.lead{color:var(--mute);font-size:1.1rem;max-width:30em;margin-bottom:30px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 26px;border-radius:6px;font-weight:700;border:1.5px solid var(--cyan)}
+.btn.main{background:var(--cyan);color:var(--bg)}
+.btn.main:hover{background:#7fe2ff}
+.btn.ghost:hover{background:rgba(53,208,255,.1)}
+#globe{width:100%;aspect-ratio:1;display:block;cursor:grab;touch-action:pan-y}
+#globe:active{cursor:grabbing}
+.hint{color:var(--mute);font-size:.85rem;text-align:center;margin-top:-6px}
+section{padding:70px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.5rem,3.2vw,2.2rem);line-height:1.5;margin-bottom:10px}
+.sub{color:var(--mute);max-width:38em;margin-bottom:36px}
+.live{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.sq{aspect-ratio:1;padding:8%;display:flex;flex-direction:column;background:var(--bg2);border:1px solid var(--line);border-radius:4px}
+.sq .top{font-weight:700;padding-bottom:10px;margin-bottom:6%;border-bottom:3px solid var(--cyan)}
+.swap{flex:1;transition:opacity .4s}
+.swap.out{opacity:0}
+.sq h3{font-size:clamp(1.25rem,2.8vw,1.7rem);line-height:1.5;margin-bottom:10px}
+.sq p{color:var(--mute);line-height:2}
+.sq .foot{direction:ltr;text-align:center;color:var(--cyan);font-size:.85rem;padding-top:8px;border-top:2px solid var(--cyan)}
+dl div{padding:16px 0;border-bottom:1px solid var(--line)}
+dl div:first-child{padding-top:0}
+dt{font-weight:700;color:var(--lilac)}
+dd{color:var(--mute)}
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 28px;padding:24px 0;border-bottom:1px solid var(--line)}
+.row h3{font-size:1.2rem}
+.row p{color:var(--mute);grid-column:1}
+.price{grid-row:1;grid-column:2;color:var(--cyan);font-weight:700;white-space:nowrap}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;counter-reset:s}
+.steps div{counter-increment:s;border-top:3px solid var(--lilac);padding-top:12px}
+.steps div::before{content:counter(s);display:block;color:var(--lilac);font-weight:800;font-size:1.7rem}
+.steps b{display:block}
+.steps span{color:var(--mute);font-size:.95rem}
+.res{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+.res a{display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.res a:hover b{color:var(--cyan)}
+.res span{direction:ltr;color:var(--mute);font-size:.9rem}
+.cta{text-align:center}
+.cta .sub{margin-inline:auto}
+.cta .btns{justify-content:center}
+footer{padding:30px 0 50px;color:var(--mute);font-size:.88rem;border-top:1px solid var(--line);text-align:center}
+@media (max-width:820px){
+  nav{display:none}
+  .hero{grid-template-columns:1fr;min-height:0;gap:6px}
+  .hero>div:last-child{order:-1;max-width:420px;margin:0 auto;width:100%}
+  .live,.res,.steps{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.swap{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="#">عالم المعلوماتية</a>
+  <nav aria-label="التنقل"><a href="#live">كيف يعمل</a><a href="#services">الخدمات</a><a href="#free">مصادر مجانية</a><a href="#contact">تواصل</a></nav>
+</header>
+<main>
+  <div class="hero">
+    <div>
+      <h1>عالم من الحروف والأكواد، ينشر وحده</h1>
+      <p class="lead">أبني قنوات وصفحات عربية تنشر محتواها بنفسها: بطاقات مصممة، أخبار تقنية، وبوتات تيليغرام. وأنت تتفرغ لعملك.</p>
+      <div class="btns">
+        <a class="btn main" href="#contact">اطلب عيّنة مجانية</a>
+        <a class="btn ghost" href="https://t.me/informaticsworldar" target="_blank" rel="noopener">شاهد القناة</a>
+      </div>
+    </div>
+    <div>
+      <canvas id="globe" role="img" aria-label="كرة مصنوعة من حروف عربية ورموز برمجية تدور، وعليها المنصات الثلاث" tabindex="0"></canvas>
+      <p class="hint">اسحبها لتدويرها</p>
+    </div>
+  </div>
+
+  <section id="live">
+    <h2>القناة نفسها هي النموذج</h2>
+    <p class="sub">لا أنشر فيها يدوياً. هذا ما يحدث كل يوم.</p>
+    <div class="live">
+      <div class="sq" aria-label="مثال على بطاقة منشور">
+        <div class="top">عالم المعلوماتية</div>
+        <div class="swap" id="swap"><h3 id="ct"></h3><p id="cp"></p></div>
+        <div class="foot">t.me/informaticsworldar</div>
+      </div>
+      <dl>
+        <div><dt>المنشورات</dt><dd>بطاقة صورة عربية لكل منشور، من الثامنة صباحاً حتى العاشرة مساءً، بفارق ثلاث ساعات على الأقل.</dd></div>
+        <div><dt>الأخبار</dt><dd>خبر تقني جديد ثلاث مرات يومياً تقريباً، بعنوانه ومصدره ورابطه.</dd></div>
+        <div><dt>التشغيل</dt><dd>على خادم مجاني، دون أن يبقى جهازي مفتوحاً. وإن تأخر موعد، يعوّضه الفحص التالي.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>الخدمات</h2>
+    <p class="sub">الأسعار بداية فقط، وتختلف حسب حجم العمل.</p>
+    <div class="rows">
+      <div class="row"><h3>إنشاء قناة أو صفحة وتجهيزها</h3><span class="price">من 25$</span><p>هوية موحدة، وصف جيد، وأول منشورات جاهزة قبل أن تدعو أحداً.</p></div>
+      <div class="row"><h3>إدارة المحتوى شهرياً</h3><span class="price">من 50$ شهرياً</span><p>منشورات وبطاقات يومية بلغة سليمة، ونشر منتظم على المنصات التي تختارها.</p></div>
+      <div class="row"><h3>بوت تيليغرام مخصص</h3><span class="price">حسب الطلب</span><p>نشر تلقائي، ردود جاهزة، أو أي مهمة متكررة تريد أن تتوقف عن عملها بيدك.</p></div>
+    </div>
+  </section>
+
+  <section id="start">
+    <h2>كيف نبدأ</h2>
+    <p class="sub">خطوات قصيرة، وتجربة قبل أي التزام.</p>
+    <div class="steps">
+      <div><b>تراسلني</b><span>أخبرني عن نشاطك وما تريد الوصول إليه.</span></div>
+      <div><b>عيّنة مجانية</b><span>أجهز لك ثلاثة منشورات لترى الشكل بنفسك.</span></div>
+      <div><b>نبدأ النشر</b><span>إن أعجبك العمل، نتفق على الباقة ويبدأ النشر المنتظم.</span></div>
+    </div>
+  </section>
+
+  <section id="free">
+    <h2>مصادر مجانية لتعلّم البرمجة</h2>
+    <p class="sub">مختارة من منشورات القناة، وكلها مجانية الاستخدام.</p>
+    <ul class="res">
+      <li><a href="https://www.freecodecamp.org" target="_blank" rel="noopener"><b>freeCodeCamp: ويب وبايثون</b><span>freecodecamp.org</span></a></li>
+      <li><a href="https://cs50.harvard.edu" target="_blank" rel="noopener"><b>CS50: أساسيات علوم الحاسوب</b><span>cs50.harvard.edu</span></a></li>
+      <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener"><b>MDN: مرجع الويب</b><span>developer.mozilla.org</span></a></li>
+      <li><a href="https://roadmap.sh" target="_blank" rel="noopener"><b>خرائط طريق لكل مجال</b><span>roadmap.sh</span></a></li>
+      <li><a href="https://exercism.org" target="_blank" rel="noopener"><b>Exercism: تمارين برمجة</b><span>exercism.org</span></a></li>
+      <li><a href="https://git-scm.com/book" target="_blank" rel="noopener"><b>Pro Git: كتاب Git</b><span>git-scm.com/book</span></a></li>
+    </ul>
+  </section>
+
+  <section id="contact" class="cta">
+    <h2>جرّب قبل أن تقرر</h2>
+    <p class="sub">راسلني على إنستغرام، أو تابع القناة لترى طريقة العمل.</p>
+    <div class="btns">
+      <a class="btn main" href="https://ig.me/m/informaticsworld.ar" target="_blank" rel="noopener">راسلني على إنستغرام</a>
+      <a class="btn ghost" href="https://t.me/informaticsworldar" target="_blank" rel="noopener">قناة تيليغرام</a>
+    </div>
+  </section>
+</main>
+<footer>عالم المعلوماتية &copy; 2026</footer>
+</div>
+
+<script>
+/* بطاقة المنشورات المتبدلة */
+var posts=[
+ ["نصيحة برمجية","لا تبدأ بخمس لغات معاً. اختر لغة واحدة وابقَ معها حتى تبني بها مشروعاً صغيراً، ثم انتقل لغيرها."],
+ ["اختصارات VS Code المفيدة","Ctrl + P : فتح أي ملف بسرعة. Ctrl + / : تحويل السطر إلى تعليق. جرّبها اليوم وستوفر وقتاً."],
+ ["قاعدة النسخ الاحتياطي 3-2-1","ثلاث نسخ من ملفاتك المهمة، على نوعين مختلفين، ونسخة واحدة على الأقل خارج جهازك."]
+];
+var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var pi=0,sw=document.getElementById("swap"),ct=document.getElementById("ct"),cp=document.getElementById("cp");
+function show(n){ct.textContent=posts[n][0];cp.textContent=posts[n][1];}
+show(0);
+if(!reduce){setInterval(function(){sw.classList.add("out");setTimeout(function(){pi=(pi+1)%posts.length;show(pi);sw.classList.remove("out");},400);},4200);}
+
+/* الكرة: حروف عربية ورموز برمجية على سطح كرة، وعليها المنصات الثلاث */
+(function(){
+  var cv=document.getElementById("globe"),cx=cv.getContext("2d");
+  var G="عالمتيكبرنوحسقفدهجمطصضغخشثذزأ".split("").concat(["{","}","<",">","/",";","=","0","1"]);
+  var N=380,P=[],phi=Math.PI*(3-Math.sqrt(5)),i;
+  for(i=0;i<N;i++){var y=1-2*(i+.5)/N,r=Math.sqrt(1-y*y),t=phi*i;P.push({x:Math.cos(t)*r,y:y,z:Math.sin(t)*r,g:G[(i*7)%G.length]});}
+  function nrm(a){var l=Math.sqrt(a[0]*a[0]+a[1]*a[1]+a[2]*a[2]);return{x:a[0]/l,y:a[1]/l,z:a[2]/l};}
+  var nodes=[{n:"Telegram",p:nrm([.8,.25,.55])},{n:"Instagram",p:nrm([-.7,.1,.7])},{n:"Facebook",p:nrm([.05,-.55,.85])}];
+  var W=0,H=0,D=Math.min(2,window.devicePixelRatio||1),ry=.6,rx=.3,vy=0,drag=false,lx=0,ly=0,run=true;
+  function size(){var b=cv.getBoundingClientRect();W=b.width;H=b.height;cv.width=Math.round(W*D);cv.height=Math.round(H*D);cx.setTransform(D,0,0,D,0,0);}
+  function rot(p){var c=Math.cos(ry),s=Math.sin(ry),x=p.x*c+p.z*s,z=-p.x*s+p.z*c,cp=Math.cos(rx),sp=Math.sin(rx),y=p.y*cp-z*sp;z=p.y*sp+z*cp;return{x:x,y:y,z:z};}
+  function draw(now){
+    cx.clearRect(0,0,W,H);
+    var R=Math.min(W,H)*.4,ox=W/2,oy=H/2,pr=[],k;
+    for(k=0;k<N;k++){var q=rot(P[k]);pr.push({x:ox+q.x*R,y:oy+q.y*R,z:q.z,g:P[k].g});}
+    cx.textAlign="center";cx.textBaseline="middle";
+    var passes=[[-2,-.3,11,.2,"#b8a6ff"],[-.3,.35,14,.5,"#c9d2ff"],[.35,2,19,.95,"#35d0ff"]];
+    passes.forEach(function(ps){
+      cx.font="700 "+ps[2]+"px 'Segoe UI',Tahoma,sans-serif";cx.fillStyle=ps[4];cx.globalAlpha=ps[3];
+      pr.forEach(function(p){if(p.z>=ps[0]&&p.z<ps[1])cx.fillText(p.g,p.x,p.y);});
+    });
+    cx.globalAlpha=1;
+    nodes.forEach(function(nd,j){
+      var q=rot(nd.p);if(q.z<-.05)return;
+      var x=ox+q.x*R,y=oy+q.y*R,ph=((now||0)/1800+j*.33)%1;
+      cx.strokeStyle="#35d0ff";cx.globalAlpha=(1-ph)*.7;cx.lineWidth=2;
+      cx.beginPath();cx.arc(x,y,6+ph*16,0,6.283);cx.stroke();
+      cx.globalAlpha=1;cx.fillStyle="#0c1030";cx.beginPath();cx.arc(x,y,6,0,6.283);cx.fill();
+      cx.fillStyle="#35d0ff";cx.beginPath();cx.arc(x,y,4,0,6.283);cx.fill();
+      cx.font="700 15px 'Segoe UI',Tahoma,sans-serif";cx.fillStyle="#eef0ff";cx.textAlign=q.x>0?"left":"right";
+      cx.fillText(nd.n,x+(q.x>0?14:-14),y);cx.textAlign="center";
+    });
+  }
+  function loop(now){
+    if(!run)return;
+    if(!drag){ry+=vy+.0035;vy*=.95;}
+    draw(now);requestAnimationFrame(loop);
+  }
+  cv.addEventListener("pointerdown",function(e){drag=true;lx=e.clientX;ly=e.clientY;cv.setPointerCapture(e.pointerId);});
+  cv.addEventListener("pointermove",function(e){
+    if(!drag)return;
+    vy=(e.clientX-lx)*.008;ry+=vy;rx=Math.max(-.9,Math.min(.9,rx+(e.clientY-ly)*.006));lx=e.clientX;ly=e.clientY;
+    if(reduce)draw(0);
+  });
+  function up(){drag=false;}
+  cv.addEventListener("pointerup",up);cv.addEventListener("pointercancel",up);
+  cv.addEventListener("keydown",function(e){
+    if(e.key==="ArrowLeft"){ry-=.15;}else if(e.key==="ArrowRight"){ry+=.15;}else return;
+    e.preventDefault();if(reduce)draw(0);
+  });
+  window.addEventListener("resize",function(){size();draw(0);});
+  size();draw(0);
+  if(!reduce){
+    if("IntersectionObserver" in window){
+      new IntersectionObserver(function(en){
+        var vis=en[0].isIntersecting;
+        if(vis&&!run){run=true;requestAnimationFrame(loop);}
+        run=vis;
+      }).observe(cv);
+    }
+    requestAnimationFrame(loop);
+  }
+})();
+</script>
+</body>
+</html>
