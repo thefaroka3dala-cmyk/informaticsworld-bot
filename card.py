@@ -98,18 +98,29 @@ def make_card(text, path="card.png"):
     y += 24
 
     limit = H - 190
+    chosen = None
+    for size in (42, 38, 34, 31, 28):
+        fb = ImageFont.truetype(font_path, size)
+        lh, gap = int(size * 1.48), int(size * 0.33)
+        h = 0
+        for para in body:
+            h += len(wrap(d, para, fb, maxw)) * lh + gap
+        if y + h <= limit or size == 28:
+            chosen = (fb, lh, gap)
+            break
+    f_body, lh, gap = chosen
     stop = False
     for para in body:
         if stop:
             break
         for ln in wrap(d, para, f_body, maxw):
-            if y + 62 > limit:
+            if y + lh > limit:
                 put(d, (W - MARGIN, y), "…", f_body, SOFT)
                 stop = True
                 break
             put(d, (W - MARGIN, y), ln, f_body, SOFT)
-            y += 62
-        y += 14
+            y += lh
+        y += gap
 
     d.rectangle([MARGIN, H - 140, W - MARGIN, H - 135], fill=ACCENT)
     d.text((W // 2, H - 80), LINK, font=f_link, fill=ACCENT, anchor="mm")
